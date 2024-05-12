@@ -26,6 +26,7 @@ class Maze:
         self._create_cells()
 
     def solve(self):
+        print("Solving maze")
         return self._solve_r(0, 0)
     
     def _solve_r(self, i, j):
@@ -59,7 +60,7 @@ class Maze:
 
     def _create_cells(self):
         self._cells = []
-
+        print("Generating maze...")
         for i in range(self._num_cols):
             self._cells.append([None]*self._num_rows)
             for j in range(self._num_rows):
@@ -148,4 +149,4 @@ class Maze:
     def _animate(self):
         if self.__win is not None:
             self.__win.redraw()
-            sleep(.05)
+            sleep(.005)
